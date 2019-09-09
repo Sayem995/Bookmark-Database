@@ -17,3 +17,10 @@ app.rb
 
 Bookmark Class
 Erb Bookmark
+
+DATABASE CREATION INSTRUCTIONS;
+
+step1; create database- CREATE DATABASE bookmark_manager;
+step2; connecting to the database- \c bookmark_manager;
+step3; creating a 'bookmarks' table- CREATE TABLE bookmarks(id SERIAL PRIMARY KEY, url VARCHAR(60));
+step4; documenting the database setup- CREATE TABLE bookmarks(id SERIAL PRIMARY KEY, url VARCHAR(60));
