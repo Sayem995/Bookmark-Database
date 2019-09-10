@@ -1,3 +1,13 @@
+require_relative './features/web_helpers'
+
+ENV['ENVIRONMENT'] = 'test'
+RSpec.configure do |config|
+  config.before(:each) do
+    delete_db_rows
+    add_db_rows
+  end
+end
+
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
