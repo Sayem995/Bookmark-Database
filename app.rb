@@ -7,8 +7,12 @@ class Bookmark < Sinatra::Base
   end
 
   get '/bookmarks' do
-    # p ENV 
     @bookmarks =  Bookmark_Manager.all
     erb :bookmarks
+  end
+
+  post '/add' do
+    Bookmark_Manager.add(params[:add_bookmark])
+    redirect('/bookmarks')
   end
 end

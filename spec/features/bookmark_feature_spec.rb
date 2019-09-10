@@ -2,7 +2,7 @@ feature 'Bookmark manager' do
 
   scenario 'hello world' do
     visit '/'
-    expect(page).to have_content('hello world')
+    expect(page).to have_content('Bookmarks')
   end
 
   scenario 'view bookmarks' do

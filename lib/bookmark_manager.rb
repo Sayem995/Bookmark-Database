@@ -14,4 +14,13 @@ class Bookmark_Manager
     # bookmarks << "Bookmark 2"
     # bookmarks
   end
+
+  def self.add(add_bookmark)
+    if ENV['ENVIRONMENT'] == 'test'
+      conn = PG.connect( dbname: 'bookmark_manager_test' )
+    else
+      conn = PG.connect( dbname: 'hishambokhari' )
+    end
+    conn.exec("INSERT INTO bookmarks (url) VALUES ('#{add_bookmark}');")
+  end
 end
