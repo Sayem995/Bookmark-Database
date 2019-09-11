@@ -4,7 +4,6 @@ ENV['ENVIRONMENT'] = 'test'
 RSpec.configure do |config|
   config.before(:each) do
     delete_db_rows
-    add_db_rows
   end
 end
 
